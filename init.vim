@@ -25,3 +25,7 @@ colorscheme monokai
 set termguicolors
 
 set nu rnu
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
