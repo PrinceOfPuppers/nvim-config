@@ -5,4 +5,4 @@ let g:rnvimr_ex_enable = 1
 let g:rnvimr_enable_picker = 1
 
 
-nmap <space>r :RnvimrToggle<CR>
+nmap <leader>r :RnvimrToggle<CR>

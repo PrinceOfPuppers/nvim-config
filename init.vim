@@ -6,6 +6,7 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'Pocco81/AutoSave.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 for f in split(glob('~/.config/nvim/plug-config/*.lua'), '\n')
@@ -29,3 +30,22 @@ set nu rnu
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+vnoremap  <leader>d  "+d
+nnoremap  <leader>d  "+d
+nnoremap  <leader>dd  "+dd
+
+nnoremap <SPACE> <Nop>
+map <Space> <leader>
