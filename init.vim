@@ -6,7 +6,7 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'Pocco81/AutoSave.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'tmsvg/pear-tree'
 call plug#end()
 
 for f in split(glob('~/.config/nvim/plug-config/*.lua'), '\n')
