@@ -1,3 +1,10 @@
+set nu rnu
+
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 call plug#begin()
 Plug 'crusoexia/vim-monokai'
 Plug 'neovim/nvim-lspconfig'
@@ -7,6 +14,7 @@ Plug 'Pocco81/AutoSave.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tmsvg/pear-tree'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 for f in split(glob('~/.config/nvim/plug-config/*.lua'), '\n')
@@ -25,11 +33,7 @@ syntax on
 colorscheme monokai
 set termguicolors
 
-set nu rnu
 
-set tabstop=4
-set shiftwidth=4
-set expandtab
 
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
