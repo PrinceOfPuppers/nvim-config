@@ -1,5 +1,3 @@
-
-
 " " set side numbers
 set nu rnu
 
@@ -9,7 +7,7 @@ set shiftwidth=4
 set expandtab
 
 call plug#begin()
-Plug 'crusoexia/vim-monokai'
+Plug 'PrinceOfPuppers/vim-monokai'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kevinhwang91/rnvimr'
@@ -32,10 +30,9 @@ for f in split(glob('~/.config/nvim/lsp/*.lua'), '\n')
     exe 'source' f
 endfor
 
-
-
-
+set termguicolors
 syntax on
+
 colorscheme monokai
 set termguicolors
 
