@@ -7,7 +7,9 @@ set shiftwidth=4
 set expandtab
 
 call plug#begin()
-Plug 'PrinceOfPuppers/vim-monokai'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'PrinceOfPuppers/nvcode-color-schemes.vim'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kevinhwang91/rnvimr'
@@ -17,6 +19,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tmsvg/pear-tree'
 Plug 'voldikss/vim-floaterm'
 call plug#end()
+
+set termguicolors
 
 for f in split(glob('~/.config/nvim/plug-config/*.lua'), '\n')
     exe 'source' f
@@ -30,23 +34,19 @@ for f in split(glob('~/.config/nvim/lsp/*.lua'), '\n')
     exe 'source' f
 endfor
 
-set termguicolors
-syntax on
 
+lua <<EOF
+  require'nvim-treesitter.configs'.setup {
+    -- Modules and its options go here
+    highlight = { enable = true },
+    -- incremental_selection = { enable = true },
+    -- textobjects = { enable = true },
+  }
+EOF
+
+syntax on
 colorscheme monokai
 set termguicolors
-
-" " lsp diagnostic colors for text
-hi LspDiagnosticsVirtualTextError guifg=#90274a
-hi LspDiagnosticsVirtualTextWarning guifg=#848528
-hi LspDiagnosticsVirtualTextInformation guifg=#88846F
-hi LspDiagnosticsVirtualTextHint guifg=#88846F
-" " lsp diagnostic underline
-hi LspDiagnosticsUnderlineError guifg=NONE ctermfg=NONE cterm=underline gui=underline
-hi LspDiagnosticsUnderlineWarning guifg=NONE ctermfg=NONE cterm=underline gui=underline
-hi LspDiagnosticsUnderlineInformation guifg=NONE ctermfg=NONE cterm=underline gui=underline
-hi LspDiagnosticsUnderlineHint guifg=NONE ctermfg=NONE cterm=underline gui=underline
-
 
 " " color floaterm boarders white 
 hi FloatermBorder guibg=background guifg=normal
