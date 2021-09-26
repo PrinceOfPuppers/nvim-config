@@ -34,19 +34,8 @@ for f in split(glob('~/.config/nvim/lsp/*.lua'), '\n')
     exe 'source' f
 endfor
 
-
-lua <<EOF
-  require'nvim-treesitter.configs'.setup {
-    -- Modules and its options go here
-    highlight = { enable = true },
-    -- incremental_selection = { enable = true },
-    -- textobjects = { enable = true },
-  }
-EOF
-
 syntax on
 colorscheme monokai
-set termguicolors
 
 " " color floaterm boarders white 
 hi FloatermBorder guibg=background guifg=normal
