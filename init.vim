@@ -59,3 +59,4 @@ nnoremap  <leader>dd  "+dd
 nnoremap <SPACE> <Nop>
 map <Space> <leader>
 
+inoremap <C-k> <cmd>lua vim.lsp.buf.hover()<CR>

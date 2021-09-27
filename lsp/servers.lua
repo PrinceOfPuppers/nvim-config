@@ -10,7 +10,7 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap=true--[[, silent=true--]] }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -36,10 +36,13 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 
-    'tsserver', -- npm i -g typescript typescript-language-server
-    'bashls', -- npm i -g bash-language-server
+    'tsserver', -- $ npm i -g typescript typescript-language-server
+    'bashls',   -- $ npm i -g bash-language-server
     'csharp_ls', 
-    'jedi_language_server' -- pip install -U jedi-language-server
+    'jedi_language_server', -- pip install -U jedi-language-server
+    'ccls' -- package manager ccls
+           -- $ pip install scan-build
+           -- $ intercept-build [MAKEFile COMMAND HERE] (do this in project dir to create compile_commands.json)
 }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
