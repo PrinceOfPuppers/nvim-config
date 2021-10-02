@@ -18,6 +18,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tmsvg/pear-tree'
 Plug 'voldikss/vim-floaterm'
+Plug 'puremourning/vimspector'
 call plug#end()
 
 set termguicolors
