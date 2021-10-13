@@ -35,11 +35,14 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
+--autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 local servers = { 
     'tsserver', -- $ npm i -g typescript typescript-language-server
     'bashls',   -- $ npm i -g bash-language-server
     'csharp_ls', 
-    'jedi_language_server', -- pip install -U jedi-language-server
+    'pyright',
+    --'jedi_language_server', -- pip install -U jedi-language-server
+    --'pylsp', -- pip install 'python-lsp-server[all]'
     'ccls' -- package manager ccls
            -- $ pip install scan-build
            -- $ intercept-build [MAKEFile COMMAND HERE] (do this in project dir to create compile_commands.json)

@@ -1,11 +1,11 @@
 " https://github.com/puremourning/vimspector#human-mode
 "
 " F3 	        stop debugging
-" <leader>F3    close debugger
+" <leader>F3    close debugger (custom)
 " F4 	        restart
 " F5 	        start/continue
 " F6 	        Pause
-" F8 	        Add a function breakpoint for the expression under cursor
+" F8 	        (custom, old mapping:)Add a function breakpoint for the expression under cursor
 " <leader>F8 	Run to Cursor
 " F9 	        Toggle line breakpoint on the current line.
 " <leader>F9 	Toggle conditional line breakpoint or logpoint on the current line.

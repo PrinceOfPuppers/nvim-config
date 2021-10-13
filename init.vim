@@ -21,6 +21,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'puremourning/vimspector'
 call plug#end()
 
+
 set termguicolors
 
 for f in split(glob('~/.config/nvim/plug-config/*.lua'), '\n')
@@ -61,3 +62,5 @@ nnoremap <SPACE> <Nop>
 map <Space> <leader>
 
 inoremap <C-k> <cmd>lua vim.lsp.buf.hover()<CR>
+
+
