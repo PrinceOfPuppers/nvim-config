@@ -1,8 +1,8 @@
 
-nnoremap <leader>t  :FloatermToggle term<Enter>
-nnoremap <leader>T  :FloatermToggle bigTerm<Enter>
-autocmd FileType floaterm tnoremap <buffer> <Esc> <C-\><C-n>:FloatermToggle<CR>
-autocmd FileType floaterm tnoremap <buffer> <C-n> <C-\><C-n>
+nnoremap <silent> <leader>t  :FloatermToggle term<Enter>
+nnoremap <silent> <leader>T  :FloatermToggle bigTerm<Enter>
+autocmd FileType floaterm tnoremap <silent> <buffer> <Esc> <C-\><C-n>:FloatermToggle<CR>
+autocmd FileType floaterm tnoremap <silent> <buffer> <C-n> <C-\><C-n>
 
 function! StartFloatermSilently() abort
   FloatermNew --name=term --title=term --silent
