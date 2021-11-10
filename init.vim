@@ -19,8 +19,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tmsvg/pear-tree'
 Plug 'voldikss/vim-floaterm'
 Plug 'puremourning/vimspector'
+"Plug 'tpope/vim-surround'
 call plug#end()
-
 
 set termguicolors
 
@@ -62,5 +62,3 @@ nnoremap <SPACE> <Nop>
 map <Space> <leader>
 
 inoremap <C-k> <cmd>lua vim.lsp.buf.hover()<CR>
-
-

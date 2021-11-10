@@ -7,6 +7,7 @@ lua <<EOF
     }
 EOF
 
+" folding docs: https://neovim.io/doc/user/fold.html
 set foldmethod=expr
 set nofoldenable
 set foldexpr=nvim_treesitter#foldexpr()
