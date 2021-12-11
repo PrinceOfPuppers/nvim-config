@@ -1,6 +1,13 @@
 " " set side numbers
 set nu rnu
 
+" hilight cursor line number with CursorLineNr color
+set culopt=number
+set cul
+
+" keep left margin with diagnostic tags open
+set signcolumn=yes
+
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
@@ -62,3 +69,4 @@ nnoremap <SPACE> <Nop>
 map <Space> <leader>
 
 inoremap <C-k> <cmd>lua vim.lsp.buf.hover()<CR>
+
