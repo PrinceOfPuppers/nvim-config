@@ -47,9 +47,7 @@ local servers = {
     'tsserver', -- $ npm i -g typescript typescript-language-server
     'bashls',   -- $ npm i -g bash-language-server
     'csharp_ls', 
-    'pyright',
-    --'jedi_language_server', -- pip install -U jedi-language-server
-    --'pylsp', -- pip install 'python-lsp-server[all]'
+    -- 'pyright', pyright is dealt with below
     'ccls' -- package manager ccls
            -- $ pip install scan-build
            -- $ intercept-build [MAKEFile COMMAND HERE] (do this in project dir to create compile_commands.json)
@@ -62,3 +60,20 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+-- special treatment for pyright
+nvim_lsp.pyright.setup {
+  flags = {
+    debounce_text_changes = 150,
+  },
+  on_attach = on_attach,
+  settings = {
+    python =  {
+      analysis = {
+        autoSearchPaths = false,
+        useLibraryCodeForTypes = false,
+        diagnosticMode = 'openFilesOnly',
+      }
+    }
+  }
+}
