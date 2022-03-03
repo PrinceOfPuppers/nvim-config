@@ -56,7 +56,7 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     flags = {
-      debounce_text_changes = 150,
+      --debounce_text_changes = 150,
     }
   }
 end
@@ -64,7 +64,7 @@ end
 -- special treatment for pyright
 nvim_lsp.pyright.setup {
   flags = {
-    debounce_text_changes = 150,
+    --debounce_text_changes = 150,
   },
   on_attach = on_attach,
   settings = {
