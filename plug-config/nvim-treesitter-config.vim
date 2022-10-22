@@ -12,4 +12,7 @@ set foldmethod=expr
 set nofoldenable
 set foldexpr=nvim_treesitter#foldexpr()
 
+" hack for arduino
+autocmd BufRead,BufNewFile *.ino set filetype=cpp
+
 " set foldminlines=10

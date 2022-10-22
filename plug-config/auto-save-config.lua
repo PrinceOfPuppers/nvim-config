@@ -1,9 +1,11 @@
-local autosave = require("autosave")
+local autosave = require("auto-save")
 
 autosave.setup(
     {
         enabled = true,
-        execution_message = "",
+        execution_message = {
+            message = ""
+    	},
         events = {"InsertLeave", "TextChanged"},
         conditions = {
             exists = true,

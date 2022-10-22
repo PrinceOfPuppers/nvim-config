@@ -47,7 +47,8 @@ local servers = {
     'tsserver', -- $ npm i -g typescript typescript-language-server
     'bashls',   -- $ npm i -g bash-language-server
     'csharp_ls', 
-    -- 'pyright', pyright is dealt with below
+    -- 'arduino-language-server', -- delat with below
+    -- 'pyright', -- pyright is dealt with below
     'ccls' -- package manager ccls
            -- $ pip install scan-build
            -- $ intercept-build [MAKEFile COMMAND HERE] (do this in project dir to create compile_commands.json)
@@ -61,7 +62,30 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- special treatment for pyright
+-- special treatment for arduino
+local MY_FQBN = "arduino:avr:mega"
+nvim_lsp.arduino_language_server.setup {
+    cmd = {
+        "arduino-language-server",
+        "-cli", "/usr/bin/arduino-cli",
+        "-cli-config", "/home/princeofpuppers/.arduino15/arduino-cli.yaml",
+        --"-cli-daemon-addr", "localhost:50051",
+        --"-cli-daemon-instance", "1",
+        "-clangd", "clangd",
+        "-fqbn",
+        MY_FQBN
+    }
+}
+
+-- special treatment for solargraph (ruby)
+nvim_lsp.solargraph.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  }
+}
+
+-- special treatment for pyright (python)
 nvim_lsp.pyright.setup {
   flags = {
     --debounce_text_changes = 150,
@@ -70,8 +94,8 @@ nvim_lsp.pyright.setup {
   settings = {
     python =  {
       analysis = {
-        autoSearchPaths = false,
-        useLibraryCodeForTypes = false,
+        --autoSearchPaths = false,
+        --useLibraryCodeForTypes = false,
         diagnosticMode = 'openFilesOnly',
       }
     }

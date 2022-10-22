@@ -1,5 +1,6 @@
 " " set side numbers
 set nu rnu
+set mouse=
 
 " hilight cursor line number with CursorLineNr color
 set culopt=number
@@ -13,14 +14,14 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'PrinceOfPuppers/nvcode-color-schemes.vim'
+Plug 'PrinceOfPuppers/nvim-colorschemes'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kevinhwang91/rnvimr'
-Plug 'Pocco81/AutoSave.nvim'
+Plug 'Pocco81/auto-save.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tmsvg/pear-tree'
