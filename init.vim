@@ -28,6 +28,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tmsvg/pear-tree'
 Plug 'voldikss/vim-floaterm'
 Plug 'puremourning/vimspector'
+Plug 'ray-x/lsp_signature.nvim'
 "Plug 'tpope/vim-surround'
 call plug#end()
 
