@@ -24,8 +24,7 @@ let g:fzf_tags_command = 'ctags -R'
 " Border color
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Normal', 'border': 'sharp' } }
 
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline
-                        \ --bind ctrl-u:previous-history   --bind ctrl-d:next-history'
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
