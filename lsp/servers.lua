@@ -52,10 +52,12 @@ local servers = {
     'csharp_ls', 
     -- 'arduino-language-server', -- delat with below
     -- 'pyright', -- pyright is dealt with below
-    'ccls' -- package manager ccls
-           -- $ pip install scan-build
-           -- $ intercept-build [MAKEFile COMMAND HERE] (do this in project dir to create compile_commands.json)
+    'ccls', -- package manager ccls
+            -- $ pip install scan-build
+            -- $ intercept-build [MAKEFile COMMAND HERE] (do this in project dir to create compile_commands.json)
+    'veridian', -- binaries from here: https://github.com/vivekmalneedi/veridian and here: https://github.com/chipsalliance/verible, added to path
 }
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -66,7 +68,8 @@ for _, lsp in ipairs(servers) do
 end
 
 -- special treatment for arduino
-local MY_FQBN = "arduino:avr:mega"
+
+local MY_FQBN = "arduino:avr:nano"
 nvim_lsp.arduino_language_server.setup {
     cmd = {
         "arduino-language-server",
