@@ -56,6 +56,7 @@ local servers = {
             -- $ pip install scan-build
             -- $ intercept-build [MAKEFile COMMAND HERE] (do this in project dir to create compile_commands.json)
     'veridian', -- binaries from here: https://github.com/vivekmalneedi/veridian and here: https://github.com/chipsalliance/verible, added to path
+    'openscad_ls', -- cargo install openscad-language-server
 }
 
 for _, lsp in ipairs(servers) do

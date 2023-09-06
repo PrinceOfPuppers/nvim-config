@@ -5,6 +5,7 @@ lua <<EOF
         -- incremental_selection = { enable = true },
         -- textobjects = { enable = true },
     }
+
 EOF
 
 " folding docs: https://neovim.io/doc/user/fold.html
