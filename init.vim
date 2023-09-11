@@ -29,8 +29,6 @@ Plug 'tmsvg/pear-tree'
 Plug 'voldikss/vim-floaterm'
 Plug 'puremourning/vimspector'
 Plug 'ray-x/lsp_signature.nvim'
-"Plug 'j-hui/fidget.nvim'
-"Plug 'tpope/vim-surround'
 call plug#end()
 
 set termguicolors
