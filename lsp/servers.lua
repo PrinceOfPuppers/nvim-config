@@ -93,6 +93,7 @@ nvim_lsp.solargraph.setup {
 }
 
 -- special treatment for pyright (python)
+-- npm i -g pyright
 nvim_lsp.pyright.setup {
   flags = {
     --debounce_text_changes = 150,

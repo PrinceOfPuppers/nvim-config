@@ -16,19 +16,21 @@ set expandtab
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
 Plug 'PrinceOfPuppers/nvim-colorschemes'
-Plug 'norcalli/nvim-colorizer.lua'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'kevinhwang91/rnvimr'
-Plug 'Pocco81/auto-save.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tmsvg/pear-tree'
 Plug 'voldikss/vim-floaterm'
-Plug 'puremourning/vimspector'
 Plug 'ray-x/lsp_signature.nvim'
+
+Plug 'nvim-treesitter/playground'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'Pocco81/auto-save.nvim'
+Plug 'puremourning/vimspector'
+Plug 'iamcco/markdown-preview.nvim', { 'do': ':call mkdp#util#install()', 'for': 'markdown', 'on': 'MarkdownPreview' }
 call plug#end()
 
 set termguicolors
