@@ -6,6 +6,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -40,7 +41,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   -- buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   -- buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -69,9 +69,9 @@ for _, lsp in ipairs(servers) do
 end
 
 -- special treatment for arduino
-
-local MY_FQBN = "arduino:avr:nano"
+local MY_FQBN = "HoodLoader2:avr:HoodLoader2atmega16u2"
 nvim_lsp.arduino_language_server.setup {
+    on_attach = on_attach,
     cmd = {
         "arduino-language-server",
         "-cli", "/usr/bin/arduino-cli",
