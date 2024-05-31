@@ -69,7 +69,8 @@ for _, lsp in ipairs(servers) do
 end
 
 -- special treatment for arduino
-local MY_FQBN = "HoodLoader2:avr:HoodLoader2atmega16u2"
+-- local MY_FQBN = "HoodLoader2:avr:HoodLoader2atmega16u2"
+local MY_FQBN = "esp8266:esp8266:nodemcuv2"
 nvim_lsp.arduino_language_server.setup {
     on_attach = on_attach,
     cmd = {
