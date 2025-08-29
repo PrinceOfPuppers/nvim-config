@@ -6,6 +6,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
+vim.diagnostic.config({
+  virtual_text = true,
+})
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -47,7 +50,7 @@ end
 -- map buffer local keybindings when the language server attaches
 --autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 local servers = { 
-    'tsserver', -- $ npm i -g typescript typescript-language-server
+    'ts_ls', -- $ npm i -g typescript typescript-language-server
     'bashls',   -- $ npm i -g bash-language-server
     'csharp_ls', 
     -- 'arduino-language-server', -- delat with below
