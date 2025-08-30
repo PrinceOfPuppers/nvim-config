@@ -17,14 +17,28 @@ set expandtab
 call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'PrinceOfPuppers/nvim-colorschemes'
+
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
+
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'lukas-reineke/cmp-rg'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+
+Plug 'windwp/nvim-autopairs'
+" For vsnip users.
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+
+
 Plug 'kevinhwang91/rnvimr'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'tmsvg/pear-tree'
+"Plug 'tmsvg/pear-tree'
 Plug 'voldikss/vim-floaterm'
-Plug 'ray-x/lsp_signature.nvim'
 
 Plug 'nvim-treesitter/playground'
 Plug 'norcalli/nvim-colorizer.lua'
