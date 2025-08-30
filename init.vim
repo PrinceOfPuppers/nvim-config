@@ -30,8 +30,8 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 
 Plug 'windwp/nvim-autopairs'
 " For vsnip users.
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 
 Plug 'kevinhwang91/rnvimr'
@@ -85,6 +85,4 @@ nnoremap  <leader>dd  "+dd
 
 nnoremap <SPACE> <Nop>
 map <Space> <leader>
-
-inoremap <C-k> <cmd>lua vim.lsp.buf.hover()<CR>
 
