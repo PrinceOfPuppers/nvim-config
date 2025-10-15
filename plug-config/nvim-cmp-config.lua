@@ -1,6 +1,35 @@
 -- Set up nvim-cmp.
 local cmp = require'cmp'
 
+local cmp_next = cmp.mapping(function(fallback)
+  if cmp.visible() then
+    cmp.select_next_item()
+  else
+    fallback()
+  end
+end, { "c" })
+
+local cmp_prev = cmp.mapping(function(fallback)
+  if cmp.visible() then
+    cmp.select_prev_item()
+  else
+    fallback()
+  end
+end, { "c" })
+
+cmp.setup.cmdline(':', {
+  mapping = {
+    ['<C-j>'] = cmp_next,
+    ['<C-k>'] = cmp_prev,
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = {
+    { name = 'path' },
+    { name = 'cmdline' },
+  }
+})
+
+
 cmp.setup({
 snippet = {
   -- REQUIRED - you must specify a snippet engine
@@ -66,7 +95,10 @@ require("cmp_git").setup() ]]--
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ '/', '?' }, {
-mapping = cmp.mapping.preset.cmdline(),
+mapping = cmp.mapping.preset.cmdline({
+  ['<C-j>'] = cmp_next,
+  ['<C-k>'] = cmp_prev,
+}),
 sources = {
   { name = 'buffer' }
 }
@@ -74,7 +106,10 @@ sources = {
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
-mapping = cmp.mapping.preset.cmdline(),
+mapping = cmp.mapping.preset.cmdline({
+  ['<C-j>'] = cmp_next,
+  ['<C-k>'] = cmp_prev,
+}),
 sources = cmp.config.sources({
   { name = 'path' }
 }, {
