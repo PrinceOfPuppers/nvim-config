@@ -75,20 +75,21 @@ local servers = {
 }
 
 
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+for _, server in ipairs(servers) do
+  vim.lsp.config( server, {
     capabilities = nvim_cmp_capabilities,
     on_attach = on_attach,
     flags = {
       --debounce_text_changes = 150,
     }
-  }
+  })
+  vim.lsp.enable(server)
 end
 
 -- special treatment for arduino
 -- local MY_FQBN = "HoodLoader2:avr:HoodLoader2atmega16u2"
 local MY_FQBN = "esp8266:esp8266:nodemcuv2"
-nvim_lsp.arduino_language_server.setup {
+vim.lsp.config('arduino_language_server', {
     capabilities = nvim_cmp_capabilities,
     on_attach = on_attach,
     cmd = {
@@ -101,20 +102,22 @@ nvim_lsp.arduino_language_server.setup {
         "-fqbn",
         MY_FQBN
     }
-}
+})
+vim.lsp.enable('arduino_language_server')
 
 -- special treatment for solargraph (ruby)
-nvim_lsp.solargraph.setup {
+vim.lsp.config('solargraph', {
   capabilities = nvim_cmp_capabilities,
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150,
   }
-}
+})
+vim.lsp.enable('solargraph')
 
 -- special treatment for pyright (python)
 -- npm i -g pyright
-nvim_lsp.pyright.setup {
+vim.lsp.config('pyright', {
   capabilities = nvim_cmp_capabilities,
   flags = {
     --debounce_text_changes = 150,
@@ -129,4 +132,5 @@ nvim_lsp.pyright.setup {
       }
     }
   }
-}
+})
+vim.lsp.enable('pyright')
